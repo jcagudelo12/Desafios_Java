@@ -14,14 +14,20 @@ public class ColumnaBingo {
     public int[] generarColumna(LetraBingo letra) {
         List<Integer> numeros = new ArrayList<>();
         for (int i = 0; i < letra.getLon(); i++) {
-            int numero = generarNumero(letra.getMin(), letra.getMax());
-            while(numeros.contains(numero)){
-                numero = generarNumero(letra.getMin(), letra.getMax());
+            if (letra.getLetra() == "N" && i == 2) {
+                System.out.println(letra.getLetra());
+                numeros.add(0);
             }
-            numeros.add(numero);
+            else{
+                int numero = generarNumero(letra.getMin(), letra.getMax());
+                while(numeros.contains(numero)){
+                    numero = generarNumero(letra.getMin(), letra.getMax());
+                }
+                numeros.add(numero);
+            }
         }
 
-        Collections.sort(numeros);
+        //Collections.sort(numeros);
         return numeros.stream().mapToInt(Integer::intValue).toArray();
     }
 

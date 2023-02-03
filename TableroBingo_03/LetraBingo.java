@@ -1,7 +1,7 @@
 package TableroBingo_03; 
 
 public enum LetraBingo {
-    B(1, 15, 5), I(16, 30, 5), N(31, 45, 4), G(46, 60, 5), O(61, 75, 5);
+    B(1, 15, 5), I(16, 30, 5), N(31, 45, 5), G(46, 60, 5), O(61, 75, 5);
 
     private int min;
     private int max;
